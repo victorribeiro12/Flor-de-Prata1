@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor de Prata - Colar Coração Solitário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3e8;
+        }
+        .font-georgia {
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-blue-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <button class="lg:hidden text-white hover:text-gray-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                        <div class="text-3xl font-bold font-georgia">
+                    Flor de Prata
+                </div>
+            </div>
+            <div class="hidden lg:flex flex-grow justify-center px-8">
+                <div class="relative w-full max-w-lg">
+                    <input type="text" placeholder="pesquise" class="w-full pl-4 pr-10 py-2 rounded-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="text-white hover:text-gray-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5H2.4m4.6 8l1.6 6H17M13 18a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <div class="bg-white rounded-2xl shadow-xl p-6 lg:flex lg:space-x-12 border-4 border-white">
+            <!-- Left Side: Product Image Gallery -->
+            <div class="lg:w-1/2">
+                <div class="main-image-container relative">
+                    <img id="main-product-image" src="https://placehold.co/800x800/e2e8f0/64748b?text=Imagem+Principal" alt="Imagem principal do Colar Coração Solitário" class="w-full rounded-2xl object-cover mb-4 shadow-md">
+                    <div class="absolute inset-0 bg-gray-200 bg-opacity-50 flex items-center justify-center hidden rounded-2xl" id="loading-spinner">
+                      <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-600"></div>
+                    </div>
+                </div>
+                <div class="thumbnail-gallery flex space-x-3 overflow-x-auto pb-2 justify-center">
+                    <img onclick="changeImage('https://placehold.co/800x800/e2e8f0/64748b?text=Imagem+Principal')" src="https://placehold.co/80x80/e2e8f0/64748b?text=1" alt="Miniatura 1" class="w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-blue-400 transition-colors duration-300">
+                    <img onclick="changeImage('https://placehold.co/800x800/d1d5db/374151?text=Close-up')" src="https://placehold.co/80x80/d1d5db/374151?text=2" alt="Miniatura 2" class="w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-blue-400 transition-colors duration-300">
+                    <img onclick="changeImage('https://placehold.co/800x800/9ca3af/1f2937?text=Detalhe')" src="https://placehold.co/80x80/9ca3af/1f2937?text=3" alt="Miniatura 3" class="w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-blue-400 transition-colors duration-300">
+                    <img onclick="changeImage('https://placehold.co/800x800/6b7280/111827?text=Uso')" src="https://placehold.co/80x80/6b7280/111827?text=4" alt="Miniatura 4" class="w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-blue-400 transition-colors duration-300">
+                </div>
+            </div>
+
+            <!-- Right Side: Product Details & Actions -->
+            <div class="lg:w-1/2 mt-8 lg:mt-0">
+                <h1 class="text-4xl font-georgia font-semibold text-gray-800 mb-2">Colar Coração Solitário</h1>
+                <p class="text-gray-600 text-lg mb-4">Colar de prata 925 com pingente em formato de coração e zircônia central.</p>
+                
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    </span>
+                    <span class="text-gray-500">4.5 (120 avaliações)</span>
+                </div>
+                
+                <div class="flex items-baseline mb-6">
+                    <span class="text-4xl font-semibold text-gray-800">R$ 120,00</span>
+                    <span class="text-lg text-gray-500 ml-2">em até 3x sem juros</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <button class="bg-blue-400 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-500 transition-colors duration-300 shadow-md">
+                        Adicionar ao Carrinho
+                    </button>
+                    <button class="bg-gray-100 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-300 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        Favoritar
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Products Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-georgia font-semibold text-gray-800 mb-6 text-center lg:text-left">Produtos Relacionados</h2>
+            <div id="related-products-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Related products will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white text-center p-4 mt-8 shadow-inner">
+        <p>&copy; 2025 Flor de Prata. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para trocar a imagem principal
+        function changeImage(newSrc) {
+            const mainImage = document.getElementById('main-product-image');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            
+            // Mostra o spinner enquanto a nova imagem carrega
+            loadingSpinner.classList.remove('hidden');
+
+            const newImage = new Image();
+            newImage.onload = () => {
+                mainImage.src = newSrc;
+                loadingSpinner.classList.add('hidden');
+            };
+            newImage.onerror = () => {
+                mainImage.src = 'https://placehold.co/800x800/f05545/ffffff?text=Erro+ao+carregar';
+                loadingSpinner.classList.add('hidden');
+                console.error('Erro ao carregar a imagem: ' + newSrc);
+            };
+            newImage.src = newSrc;
+        }
+
+        // Dados completos dos produtos
+        const allProducts = [
+            {
+                id: 1,
+                name: "Brinco Gota Prata",
+                price: "R$ 89,90",
+                image: "https://placehold.co/300x300/a7a7a7/ffffff?text=Brinco"
+            },
+            {
+                id: 2,
+                name: "Anel Solitário Minimalista",
+                price: "R$ 75,50",
+                image: "https://placehold.co/300x300/c7c7c7/ffffff?text=Anel"
+            },
+            {
+                id: 3,
+                name: "Pulseira Elo Português",
+                price: "R$ 150,00",
+                image: "https://placehold.co/300x300/e7e7e7/ffffff?text=Pulseira"
+            },
+            {
+                id: 4,
+                name: "Pingente Trevo da Sorte",
+                price: "R$ 45,00",
+                image: "https://placehold.co/300x300/a7a7a7/ffffff?text=Pingente"
+            },
+            {
+                id: 5,
+                name: "Corrente de Prata Lisa",
+                price: "R$ 95,00",
+                image: "https://placehold.co/300x300/d4d4d4/333333?text=Corrente"
+            },
+            {
+                id: 6,
+                name: "Brinco Argola Pequena",
+                price: "R$ 65,00",
+                image: "https://placehold.co/300x300/c0c0c0/ffffff?text=Argola"
+            },
+            {
+                id: 7,
+                name: "Anel de Falange",
+                price: "R$ 40,00",
+                image: "./imagens/8.png"
+            },
+            {
+                id: 8,
+                name: "Colar Ponto de Luz",
+                price: "R$ 110,00",
+                image: ""
+            }
+        ];
+
+        // Função para pegar 4 produtos aleatórios
+        function getRandomProducts(arr, num) {
+            const shuffled = [...arr].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        // Função para renderizar os produtos na página
+        function renderRelatedProducts() {
+            const container = document.getElementById('related-products-container');
+            container.innerHTML = ''; // Limpa o conteúdo antes de renderizar
+            
+            const productsToRender = getRandomProducts(allProducts, 4);
+
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-xl shadow-md p-4 transition-transform transform hover:scale-105';
+                
+                productCard.innerHTML = `
+                    <a href="#" class="block">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-auto rounded-lg object-cover mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
+                        <p class="text-blue-600 font-bold mt-1">${product.price}</p>
+                    </a>
+                `;
+                container.appendChild(productCard);
+            });
+        }
+
+        // Renderiza os produtos quando a página é carregada
+        document.addEventListener('DOMContentLoaded', renderRelatedProducts);
+    </script>
+</body>
+</html>

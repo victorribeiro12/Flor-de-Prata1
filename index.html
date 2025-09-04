@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flor de Prata - Joias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="stylecommenu.css">
+</head>
+
+<body class="bg-gray-100 pt-16">
+    <header class="fixed top-0 left-0 w-full z-20">
+        <div class="topbar">
+            <button id="menu-btn" class="text-2xl" aria-label="Menu">&#9776;</button>
+
+            <div class="logo">Flor de Prata</div>
+                
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="pesquise"
+                    class="px-4 py-2 rounded-full border-none outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 transition duration-300" />
+                <button id="search-btn"
+                    class="ml-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-2 transition duration-300"
+                    aria-label="Pesquisar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.535l4.634 4.634a1 1 0 01-1.414 1.414l-4.634-4.634A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <button id="cart-btn" class="text-2xl" aria-label="Carrinho">&#128722;</button>
+            <button id="profile-btn" class="text-2xl" aria-label="Perfil">&#x1F464;</button>
+        </div>
+    </header>
+
+    <aside id="side-menu" class="side-menu">
+        <button id="close-menu-btn" class="close-btn">&times;</button>
+        <div class="flex flex-col h-full justify-between">
+            <div>
+                <h3 class="mb-4 text-center">Menu</h3>
+                <ul>
+                    <li><a href="#" class="block p-4">Início</a></li>
+                    <li><a href="#" class="block p-4">Produtos</a></li>
+                    <li><a href="#" class="block p-4">Novidades</a></li>
+                    <li><a href="#" class="block p-4">Contato</a></li>
+                </ul>
+                <h3 class="mb-2">Categorias</h3>
+                <ul>
+                    <li><a href="Aneis1.html" class="block p-4">Anéis</a></li>
+                    <li><a href="#" class="block p-4">Colares</a></li>
+                    <li><a href="#" class="block p-4">Brincos</a></li>
+                    <li><a href="#" class="block p-4">Pulseiras</a></li>
+                    <li><a href="#" class="block p-4">Caixas</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <div id="menu-backdrop" class="menu-backdrop"></div>
+
+    <div id="profile-modal"
+        class="fixed top-16 right-4 mt-2 w-72 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-50">
+        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="profile-menu">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Meu Perfil</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Meus Pedidos</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Configurações</a>
+            <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded-lg">Sair</a>
+        </div>
+    </div>
+
+    <div id="cart-modal"
+        class="fixed top-16 right-16 mt-2 w-72 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-50">
+        <div class="py-4 px-4">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Seu Carrinho</h3>
+            <p class="text-sm text-gray-500">Nenhum item adicionado.</p>
+            <a href="#"
+                class="mt-4 block w-full text-center bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600 transition-colors">Ver
+                Carrinho</a>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8 mt-20 flex flex-col">
+        <div class="main-content w-full">
+            <section class="carousel-section relative rounded-xl shadow-lg overflow-hidden">
+                <div class="carousel flex overflow-hidden scroll-snap-x-mandatory" id="carousel">
+                    <img src="./imagens/Masculino.png" alt="Anéis" class="carousel-image min-w-full h-96 object-cover" />
+                    <img src="./imagens/2.png" alt="Mão com anéis"
+                        class="carousel-image min-w-full h-96 object-cover" />
+                    <img src="./imagens/3.png" alt="Colar" class="carousel-image min-w-full h-96 object-cover" />
+                </div>
+                <button
+                    class="carousel-btn prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-300"
+                    aria-label="Anterior">&#10094;</button>
+                <button
+                    class="carousel-btn next-btn absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-300"
+                    aria-label="Próximo">&#10095;</button>
+            </section>
+
+            <section class="my-10">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Categorias</h2>
+                <div class="categories-list grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div
+                        class="category-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <img src="./imagens/1.png" alt="Anéis"
+                            class="w-full h-48 object-cover rounded-md mb-2" />
+                        <a href="Aneis1.html"
+                            class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300">
+                            <p>Aneis</p>
+                        </a>
+                    </div>
+                    <div
+                        class="category-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <img src="./imagens/3.png" alt="Colares"
+                            class="w-full h-48 object-cover rounded-md mb-2"
+                            />
+                        <a href="#"
+                            class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300">
+                            <p>Colares</p>
+                        </a>
+                    </div>
+                    <div
+                        class="category-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <img src="./imagens/15.png" alt="Brincos"
+                            class="w-full h-48 object-cover rounded-md mb-2" />
+                        <a href="#"
+                            class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300">
+                            <p>Brincos</p>
+                        </a>
+                    </div>
+                    <div
+                        class="category-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <img src="./imagens/7.png" alt="Pulseiras"
+                            class="w-full h-48 object-cover rounded-md mb-2" />
+                        <a href="#"
+                            class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300">
+                            <p>Pulseiras</p>
+                        </a>
+                    </div>
+                    <div
+                        class="category-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <img src="./imagens/3.png" alt="Caixas"
+                            class="w-full h-48 object-cover rounded-md mb-2" />
+                        <a href="#"
+                            class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300">
+                            <p>Caixas</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-10">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Principais Ofertas</h2>
+                <div class="offers-list grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="./imagens/8.png" alt="Anel Onda"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            <p class="name text-lg font-semibold text-gray-800">Anel Onda</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 67,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/0Fjc8c1/anel-solitario.jpg" alt="Anel Solitário"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Anel Solitário</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 76,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/0JbbGky/anel-corona.jpg" alt="Anel Corona"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Anel Corona</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 89,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/GxStDqj/anel-cravejado.jpg" alt="Anel Cravejado"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Anel Cravejado</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 80,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/vwDqRjZ/brinco-pequeno.jpg" alt="Brinco Argola Pequena"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Brinco Argola Pequena</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 50,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/3y6HKVN/brinco-grande.jpg" alt="Brinco Argola Grande"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Brinco Argola Grande</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 70,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/GRRpLqv/brinco-cravejado.jpg" alt="Brinco Cravejado"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Brinco Cravejado</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 80,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/bNXpbfS/brinco-trevo.jpg" alt="Brinco Trevo"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Brinco Trevo</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 90,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/p16GK26/colar-esmeralda.jpg" alt="Colar de esmeralda cravejado"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Colar de esmeralda cravejado</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 220,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/7KHcWyB/colar-perolas.jpg" alt="Colar perolas rose"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Colar perolas rose</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 180,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/7Jg2q5m/colar-flor-safira.jpg" alt="Colar de flor de safira"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Colar de flor de safira</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 180,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/31YX3qK/colar-perolas.jpg" alt="Colar de perolas"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Colar de perolas</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 120,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/5MZ0d0x/pulseira.jpg" alt="Pulseira de Prata"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Pulseira de Prata</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 95,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/mHf12v3/caixa.jpg" alt="Caixa de Joias"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Caixa de Joias</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 150,00</p>
+                        </a>
+                    </div>
+                    <div
+                        class="offer-item bg-white p-4 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <a href="#">
+                            <img src="https://i.ibb.co/3N2hW9B/anel-lotus.jpg" alt="Anel Flor de Lótus"
+                                class="w-full h-48 object-cover rounded-md mb-2" />
+                            <p class="name text-lg font-semibold text-gray-800">Anel Flor de Lótus</p>
+                            <p class="price text-xl font-bold text-blue-600">R$ 110,00</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>Flor de Prata. Todos os direitos reservados 2025.</p>
+    </footer>
+    <script src="scriptcommenu.js"></script>
+</body>
+</html>
