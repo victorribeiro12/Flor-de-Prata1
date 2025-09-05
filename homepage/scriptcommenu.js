@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileModal = document.getElementById("profile-modal");
   const cartModal = document.getElementById("cart-modal");
   const products = document.querySelectorAll(".offer-item");
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("senha");
 
   // 2. Funções de Controle
   const closeAll = () => {
@@ -35,36 +37,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // 🔹 Função de Busca corrigida
   const searchProducts = () => {
     const searchTerm = searchInput.value.toLowerCase().trim();
 
-   
     if (searchTerm === "") {
       products.forEach((product) => {
         product.style.display = "block";
       });
-      
       document.querySelector(".carousel-section").style.display = "block";
       document.querySelector(".categories-section").style.display = "block";
-
-    
       const searchPlaceholder = document.querySelector(".search-placeholder");
       if (searchPlaceholder) {
         searchPlaceholder.remove();
       }
-
-      return; 
+      return;
     }
 
-    // Se a busca não estiver vazia, filtre os produtos normalmente.
     products.forEach((product) => {
       const name = product.querySelector(".name").textContent.toLowerCase();
       product.style.display = name.includes(searchTerm) ? "block" : "none";
     });
   };
-
-  // 3. Listeners de Eventos
   if (menuBtn) {
     menuBtn.addEventListener("click", () => {
       closeAll();
@@ -121,5 +114,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (searchInput) {
     searchInput.addEventListener("input", searchProducts);
+  }
+
+  window.addEventListener("click", (e) => {
+    if (
+      !profileModal.contains(e.target) &&
+      !profileBtn.contains(e.target) &&
+      !cartModal.contains(e.target) &&
+      !cartBtn.contains(e.target)
+    ) {
+      closeAll();
+    }
+  });
+
+  if (togglePassword && passwordInput) {
+    const pathClosed = document.getElementById("path-closed");
+    const pathOpen = document.getElementById("path-open");
+
+    togglePassword.addEventListener("click", () => {
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        pathClosed.style.display = "none";
+        pathOpen.style.display = "block";
+      } else {
+        passwordInput.type = "password";
+        pathClosed.style.display = "block";
+        pathOpen.style.display = "none";
+      }
+    });
   }
 });
